@@ -14,7 +14,7 @@ import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 
 import Proba from "./sajatosztalyok/Proba";
-
+import Kviz from "./sajatosztalyok/Kviz";
 
 
 class App extends Component {
@@ -64,6 +64,11 @@ class App extends Component {
             <li className="nav-item">
               <Link to={"/proba"} className="nav-link">
                 Proba
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/Kviz"} className="nav-link">
+                Kviz
               </Link>
             </li>
 
@@ -133,6 +138,7 @@ class App extends Component {
             <Route path="/admin" component={BoardAdmin} />
 
             <Route path="/Proba" component={Proba} />
+            <Route path="/Kviz" component={Kviz} />
           </Switch>
         </div>
       </div>

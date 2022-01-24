@@ -111,24 +111,7 @@ render(){
     <View style={{flex: 1, paddingTop:20, backgroundColor:'lightgreen'}}>
       <View style={{flex: 1, paddingTop:20, backgroundColor:'lightgreen'}}>
 
-      <View style={{marginTop:13, marginBottom:13, borderColor:'Red'}}>
-   <TextInput placeholderTextColor="black"
-          style={{height: 40,width:'50%',alignItems:'center', alignSelf:'center',backgroundColor:'grey',borderColor:'black',color:"white",borderRadius:10, marginBottom:10,   }}
-          placeholder="Add meg a neved:"
-          onChangeText={(nev) => this.setState({nev})}
-          value={this.state.nev}
-          
-          />
-
-      <TouchableOpacity 
-  style={{backgroundColor:"grey",alignSelf:'center',width:150,margin:10,borderRadius:10, padding:10, marginTop:'auto', marginBottom:'auto',alignItems:'center', }}
-  onPress={async()=>this.bekuld()}
-  >
-
-    <Text>Elküld</Text>
-   
-  </TouchableOpacity> 
-  </View>
+     
   
 
     <FlatList
@@ -137,12 +120,12 @@ render(){
 
       <View>
 
-      <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.kerdesek_kerdes} </Text>
+      <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5, }}   >{item.kerdesek_kerdes} </Text>
       <Image  source={{uri: 'http://localhost:8080/'+item.kerdesek_kep}} style={{width:245,height:245,marginLeft:"auto",marginRight:"auto", borderRadius:12}} />
 
       <View style={{flex: 1, flexDirection: 'row', marginLeft:'auto', marginRight:'auto',  }}>
       
-        <View style={{width: 50, height: 50,  flex:6, alignItems:'center'}} >
+        <View style={{width: 'auto', height: 50,  flex:6, alignItems:'center'}} >
 
 {/*------------------------------------------------------------------------------------------------1*/}
 { this.state.lenyomva[item.kerdesek_id] == 1 ?
@@ -171,7 +154,7 @@ render(){
         </View>
         
         
-        <View style={{width: 50,  height: 50, flex:6, alignItems:'center'}}>
+        <View style={{width: 'auto',  height: 50, flex:6, alignItems:'center'}}>
 
 {/*-------------------------------------------------------------------------------------------------2*/}
 { this.state.lenyomva[item.kerdesek_id] == 2 ?
@@ -202,7 +185,7 @@ render(){
          
           <View style={{flex: 1, flexDirection: 'row', marginLeft:'auto', marginRight:'auto',}}>
 
-        <View style={{width: 50, height: 50,  flex:6, alignItems:'center'}} >
+        <View style={{width: 'auto', height: 50,  flex:6, alignItems:'center'}} >
 
 {/*------------------------------------------------------------------------------------------------3*/}
 { this.state.lenyomva[item.kerdesek_id] == 3 ?
@@ -227,7 +210,7 @@ render(){
   
 }
           </View>
-          <View style={{width: 50, height: 50, flex:6, alignItems:'center'}} >
+          <View style={{width: 'auto', height: 50, flex:6, alignItems:'center'}} >
 
 {/*-----------------------------------------------------------------------------------------------4*/}
 { this.state.lenyomva[item.kerdesek_id] == 4 ?
@@ -265,7 +248,24 @@ render(){
     />
     
     </View>
+    <View style={{marginTop:13, marginBottom:'auto', borderColor:'Red'}}>
+   <TextInput placeholderTextColor="black"
+          style={{height: 40,width:'50%',alignItems:'center', alignSelf:'center',backgroundColor:'grey',borderColor:'black',color:"white",borderRadius:10, marginBottom:10,   }}
+          placeholder="Add meg a neved:"
+          onChangeText={(nev) => this.setState({nev})}
+          value={this.state.nev}
+          
+          />
 
+      <TouchableOpacity 
+  style={{backgroundColor:"grey",alignSelf:'center',width:150,margin:10,borderRadius:10, padding:10, marginTop:'auto', marginBottom:'auto',alignItems:'center', }}
+  onPress={async()=>this.bekuld()}
+  >
+
+    <Text>Elküld</Text>
+   
+  </TouchableOpacity> 
+  </View>
   </View>
 );
 }

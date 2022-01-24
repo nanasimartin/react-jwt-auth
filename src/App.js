@@ -16,6 +16,8 @@ import BoardAdmin from "./components/board-admin.component";
 import Proba from "./sajatosztalyok/Proba";
 import Kviz from "./sajatosztalyok/Kviz";
 
+import Torol from "./sajatosztalyok/Torol";
+
 
 class App extends Component {
   constructor(props) {
@@ -85,7 +87,13 @@ class App extends Component {
                 <Link to={"/admin"} className="nav-link">
                   Admin Board
                 </Link>
-              </li>
+              </li>,
+               <li className="nav-item">
+               <Link to={"/Torol"} className="nav-link">
+                 Admin oldal
+               </Link>
+             </li>
+              
             )}
 
             {currentUser && (
@@ -139,6 +147,7 @@ class App extends Component {
 
             <Route path="/Proba" component={Proba} />
             <Route path="/Kviz" component={Kviz} />
+            <Route path="/Torol" component={Torol} />
           </Switch>
         </div>
       </div>

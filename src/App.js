@@ -18,6 +18,8 @@ import Kviz from "./sajatosztalyok/Kviz";
 
 import Torol from "./sajatosztalyok/Torol";
 
+import Kommentek from "./sajatosztalyok/Kommentek";
+
 
 class App extends Component {
   constructor(props) {
@@ -73,6 +75,11 @@ class App extends Component {
                 Kviz
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to={"/Kommentek"} className="nav-link">
+                Felvitel
+              </Link>
+            </li>
 
             {showModeratorBoard && (
               <li className="nav-item">
@@ -90,7 +97,7 @@ class App extends Component {
               </li>,
                <li className="nav-item">
                <Link to={"/Torol"} className="nav-link">
-                 Admin oldal
+                 Törlés oldal
                </Link>
              </li>
               
@@ -148,6 +155,7 @@ class App extends Component {
             <Route path="/Proba" component={Proba} />
             <Route path="/Kviz" component={Kviz} />
             <Route path="/Torol" component={Torol} />
+            <Route path="/Kommentek" component={Kommentek} />
           </Switch>
         </div>
       </div>

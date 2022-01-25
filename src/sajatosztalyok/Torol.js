@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity } from 'react-native';
+import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity } from 'react-native-web';
 
 export default class FetchExample extends React.Component {
 
@@ -24,11 +24,19 @@ export default class FetchExample extends React.Component {
   .then(x => x.text())
   .then(y => alert(y));
 
+{alert(); this.lekerdezes()}
+
   }
 
 
   componentDidMount(){
-    return fetch('http://localhost:8080/kerdesek')
+    this.lekerdezes()
+
+
+  }
+
+lekerdezes=()=>{
+  fetch('http://localhost:8080/kerdesek')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -43,9 +51,9 @@ export default class FetchExample extends React.Component {
       .catch((error) =>{
         console.error(error);
       });
-  }
-
-
+      
+      
+}
 
   render(){
 
@@ -63,15 +71,15 @@ export default class FetchExample extends React.Component {
           data={this.state.dataSource}
           renderItem={({item}) => 
 
-          <View style={{flexDirection:'column',flex:1, marginBottom:9 }} >
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5, flex:6}}   >{item.kerdesek_kerdes} </Text>
-          <Image  source={{uri: 'http://localhost:8080/'+item.kerdesek_kep}} style={{flex:6,width:300,height:300,}} />  
+          <View style={{flexDirection:'row',flex:1, marginBottom:9 }} >
+          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5, flex:6,}}   >{item.kerdesek_kerdes} </Text>
+           
 
           <TouchableOpacity
         style={styles.kekgomb}
         onPress={async ()=>this.szavazat(item.kerdesek_id)}
       >
-        <Text style={{color:"white",fontWeight:"bold",fontSize:15,flex:6,}}  >torlom</Text>
+        <Text style={{color:"white",fontWeight:"bold",fontSize:15,flex:6, alignItems:'center,', marginTop:'auto', marginBottom:'auto'}}  >torlom</Text>
       </TouchableOpacity>
           </View>
         
@@ -80,7 +88,10 @@ export default class FetchExample extends React.Component {
         
           keyExtractor={({kerdesek_id}, index) => kerdesek_id}
         />
+        
+        
       </View>
+      
     );
   }
 }

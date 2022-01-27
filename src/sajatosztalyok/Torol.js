@@ -66,12 +66,12 @@ lekerdezes=()=>{
     }
 
     return(
-      <View style={{flex: 1, paddingTop:20}}>
+      <View style={{flex: 1, paddingTop:20,}}>
         <FlatList
           data={this.state.dataSource}
           renderItem={({item}) => 
 
-          <View style={{flexDirection:'row',flex:1, marginBottom:9 }} >
+          <View style={{flexDirection:'row',flex:1, marginBottom:9, }} >
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5, flex:6,}}   >{item.kerdesek_kerdes} </Text>
            
 

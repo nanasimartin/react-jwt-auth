@@ -1,7 +1,8 @@
+
 import React, { Component } from 'react';
 import { StyleSheet,Text, TextInput, View,TouchableOpacity, FlatList, RefreshControl  } from 'react-native';
 
-import Felvitel from './Felvitel';
+import Felvitel from './Felvitelkomm';
 
 
 
@@ -65,10 +66,11 @@ export default class Komment extends Component {
   render() {
     return (
 
-        <View>
+        <View style={{border:'black',borderStyle:'dashed', marginTop:22}}>
 
         <Felvitel tema_bevitel={this.state.tema}  frissit={()=>this.ujratoltes()}  />
 
+<View style={{backgroundColor:'lightgreen',borderTopColor:'black', marginTop:12}}>
         <Text style={{fontSize:30, textAlign:'center', marginTop:25}}>Megjegyzések</Text>
         <FlatList
           data={this.state.dataSource}
@@ -76,21 +78,24 @@ export default class Komment extends Component {
 
           <View style={{backgroundColor:'lightblue', borderRadius:15, margin:10}}>
 
-          <Text style={{color:"#dd00cc",fontSize:18,marginTop:5, marginLeft:10}}>
+          <Text style={{color:"#black",fontSize:18,marginTop:5, marginLeft:10}}>
           {item.uzenet_nev} </Text>
           <Text style={{color:"black",fontSize:20, marginLeft:10}}>
           {item.uzenet_szoveg} </Text>
           <Text style={{color:"black",fontSize:12, marginRight:10, marginBottom:5, textAlign:'right'}}>
           {item.uzenet_datum} </Text>
-     
           
+     
+         
    
           </View>
+           
         
         }
     
           keyExtractor={({uzenet_id}, index) => uzenet_id}
         />
+         </View>
     </View>
     );
   }

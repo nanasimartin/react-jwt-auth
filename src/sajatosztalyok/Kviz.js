@@ -108,8 +108,8 @@ render(){
   }
 
   return(
-    <View style={{flex: 1, paddingTop:20, backgroundColor:'lightgreen'}}>
-      <View style={{flex: 1, paddingTop:20, backgroundColor:'lightgreen'}}>
+    <View style={{flex: 1, paddingTop:20, backgroundColor:'lightgreen', width:'auto', height:'auto'}}>
+      
 
      
   
@@ -247,7 +247,7 @@ render(){
       keyExtractor={({kerdesek_id}, index) => kerdesek_id}
     />
     
-    </View>
+   
     <View style={{marginTop:13, marginBottom:'auto', borderColor:'Red'}}>
    <TextInput placeholderTextColor="black"
           style={{height: 40,width:'50%',alignItems:'center', alignSelf:'center',backgroundColor:'grey',borderColor:'black',color:"white",borderRadius:10, marginBottom:10,   }}

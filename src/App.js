@@ -19,6 +19,7 @@ import Kviz from "./sajatosztalyok/Kviz";
 import Torol from "./sajatosztalyok/Torol";
 
 import Kommentek from "./sajatosztalyok/Kommentek";
+import Adatfelv from "./sajatosztalyok/Adatfelv";
 
 
 class App extends Component {
@@ -77,7 +78,7 @@ class App extends Component {
             </li>
             <li className="nav-item">
               <Link to={"/Kommentek"} className="nav-link">
-                Felvitel
+                Uzenet kuldes
               </Link>
             </li>
 
@@ -91,16 +92,18 @@ class App extends Component {
 
             {showAdminBoard && (
               <li className="nav-item">
-                <Link to={"/admin"} className="nav-link">
-                  Admin Board
+                <Link to={"/Adatfelv"} className="nav-link">
+                  adatfelvitel
                 </Link>
-              </li>,
+              </li>
+        
+            )}
+            {showAdminBoard && (
                <li className="nav-item">
                <Link to={"/Torol"} className="nav-link">
                  Törlés oldal
                </Link>
              </li>
-              
             )}
 
             {currentUser && (
@@ -156,6 +159,7 @@ class App extends Component {
             <Route path="/Kviz" component={Kviz} />
             <Route path="/Torol" component={Torol} />
             <Route path="/Kommentek" component={Kommentek} />
+            <Route path="/Adatfelv" component={Adatfelv} />
           </Switch>
         </div>
       </div>

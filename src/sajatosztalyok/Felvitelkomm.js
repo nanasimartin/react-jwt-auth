@@ -3,13 +3,16 @@ import { StyleSheet,Text, TextInput, View,TouchableOpacity } from 'react-native'
 
 
 
-export default class Felvitel extends Component {
+export default class Felvitelkomm extends Component {
   constructor(props) {
     super(props);
     this.state = {
 
         nev: '',
-        komment:""
+        komment:"", 
+
+        
+        
     };
   }
 
@@ -24,6 +27,7 @@ felvitel=async ()=>{
     let bemenet={
       bevitel1:this.state.nev,
       bevitel2:this.state.komment
+      
     }
 
     fetch('http://localhost:8080/kommentfelv',{
@@ -32,7 +36,11 @@ felvitel=async ()=>{
       headers: {"Content-type": "application/json; charset=UTF-8"}
     }
        
+   
     )
+
+    
+
     .then((response) => response.text())
     .then((szoveg) => {
 
@@ -44,11 +52,13 @@ felvitel=async ()=>{
 }
 
 
-
   render() {
     return (
       <View style = {{}}>
         <View style={{padding: 10, backgroundColor:'#dddddd'}}>
+
+        
+
             <Text style={{color:'black'}}>
                 Név:
             </Text>

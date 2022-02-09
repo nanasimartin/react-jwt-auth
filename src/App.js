@@ -3,6 +3,9 @@ import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+
+
 import AuthService from "./services/auth.service";
 
 import Login from "./components/login.component";
@@ -20,6 +23,7 @@ import Torol from "./sajatosztalyok/Torol";
 
 import Kommentek from "./sajatosztalyok/Kommentek";
 import Adatfelv from "./sajatosztalyok/Adatfelv";
+import Kommentor from "./sajatosztalyok/Kommentor";
 
 
 class App extends Component {
@@ -54,97 +58,63 @@ class App extends Component {
     const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
 
     return (
+
+
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/"} className="navbar-brand">
-            bezKoder
-          </Link>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
-                Home
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link to={"/proba"} className="nav-link">
-                Proba
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/Kviz"} className="nav-link">
-                Kviz
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/Kommentek"} className="nav-link">
-                Uzenet kuldes
-              </Link>
-            </li>
-
-            {showModeratorBoard && (
-              <li className="nav-item">
-                <Link to={"/mod"} className="nav-link">
-                  Moderator Board
-                </Link>
-              </li>
-            )}
-
-            {showAdminBoard && (
-              <li className="nav-item">
-                <Link to={"/Adatfelv"} className="nav-link">
-                  adatfelvitel
-                </Link>
-              </li>
         
-            )}
-            {showAdminBoard && (
-               <li className="nav-item">
-               <Link to={"/Torol"} className="nav-link">
-                 Törlés oldal
-               </Link>
-             </li>
-            )}
+        
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar.Brand href="#home">
+        
+        Dice Roller
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="Kviz">Kviz</Nav.Link>
+          <Nav.Link href="Kommentek">Komment írás</Nav.Link>
 
-            {currentUser && (
-              <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
-                  User
-                </Link>
-              </li>
-            )}
-          </div>
-
-          {currentUser ? (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
-                  {currentUser.username}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a href="/login" className="nav-link" onClick={this.logOut}>
-                  LogOut
-                </a>
-              </li>
-            </div>
-          ) : (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/login"} className="nav-link">
-                  Login
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link to={"/register"} className="nav-link">
-                  Sign Up
-                </Link>
-              </li>
-            </div>
+          {showAdminBoard&&(
+          <NavDropdown title="Admin" id="collasible-nav-dropdown">
+            <NavDropdown.Item href="Torol">Törlés</NavDropdown.Item>
+            <NavDropdown.Item href="Adatfelv">  Adat felvitel </NavDropdown.Item>
+            <NavDropdown.Item href="Kommentor">  Komment törlés </NavDropdown.Item>
+          </NavDropdown>
           )}
-        </nav>
+        </Nav>
+        
 
+        <Nav>
+        {currentUser ? (
+          <Nav>
+          <Nav.Link href="/profile">
+             {currentUser.username}
+              </Nav.Link>
+               <Nav.Link href="/login" onClick={this.logOut}>
+               Kijelentkezés
+                </Nav.Link></Nav>
+          ) : (
+            <Nav>
+            <Nav.Link href="/login">
+               Bejelentkezés
+                </Nav.Link>
+                 <Nav.Link href="/register">
+                 Regisztráció
+                  </Nav.Link></Nav>
+
+          )}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+
+
+
+
+
+
+
+
+{/*/   regi      */}
         <div className="container mt-3">
           <Switch>
             <Route exact path={["/", "/home"]} component={Home} />
@@ -160,9 +130,12 @@ class App extends Component {
             <Route path="/Torol" component={Torol} />
             <Route path="/Kommentek" component={Kommentek} />
             <Route path="/Adatfelv" component={Adatfelv} />
+            <Route path="/Kommentor" component={Kommentor} />
           </Switch>
         </div>
       </div>
+
+      
     );
   }
 }

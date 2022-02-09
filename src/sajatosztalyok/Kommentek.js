@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { StyleSheet,Text, TextInput, View,TouchableOpacity, FlatList, RefreshControl  } from 'react-native';
+import { StyleSheet,Text, TextInput, View,TouchableOpacity, FlatList, RefreshControl  } from 'react-native-web';
 
 import Felvitel from './Felvitelkomm';
 

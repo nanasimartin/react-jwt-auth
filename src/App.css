@@ -30,3 +30,19 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+
+
+#gomb{
+  background-color: grey;
+  color: black;
+  font-size: 16px;
+  padding: 10px 60px;
+  border-radius: 7px;
+  margin: 10px 0px;
+  cursor: pointer;
+  text-align: center;
+}
+
+body{
+  background-color: #F5F5DC;
+}

@@ -72,14 +72,15 @@ lekerdezes=()=>{
           renderItem={({item}) => 
 
           <View style={{flexDirection:'row',flex:1, marginBottom:9, }} >
-          <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5, flex:6,}}   >{item.uzenet_nev} </Text>
+          <Text style={{color:"black",backgroundColor:"lightblue",borderRadius:12,fontSize:22,textAlign:"center",marginTop:15,marginBottom:5, flex:6,}}   >{item.uzenet_nev}: {item.uzenet_szoveg} </Text>
+          
            
 
           <TouchableOpacity
         style={styles.kekgomb}
         onPress={async ()=>this.szavazat(item.uzenet_id)}
       >
-        <Text style={{color:"white",fontWeight:"bold",fontSize:15,flex:6, alignItems:'center,', marginTop:'auto', marginBottom:'auto'}}  >torlom</Text>
+        <Text style={{color:"white",fontWeight:"bold",fontSize:15,flex:6, alignItems:'center,', marginTop:'auto', marginBottom:'auto'}}  >Törlés</Text>
       </TouchableOpacity>
           </View>
         
@@ -100,10 +101,14 @@ const styles = StyleSheet.create({
   
   kekgomb: {
     alignItems: "center",
-    backgroundColor: "blue",
+    backgroundColor: "red",
+    borderRadius:10,
     padding: 10,
-    width:300,
-    marginLeft:"auto",
+    width:220,
+    marginLeft:11,
     marginRight:"auto",
+    
+    
+    
   }
 });

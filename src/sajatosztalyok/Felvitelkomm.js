@@ -44,7 +44,7 @@ felvitel=async ()=>{
     .then((response) => response.text())
     .then((szoveg) => {
 
-    alert(szoveg)
+    //alert(szoveg)
      this.props.frissit() 
 
 })
@@ -55,7 +55,7 @@ felvitel=async ()=>{
   render() {
     return (
       <View style = {{}}>
-        <View style={{padding: 10, backgroundColor:'#dddddd'}}>
+        <View style={{padding: 10, backgroundColor:'#00FF00'}}>
 
         
 
@@ -63,7 +63,7 @@ felvitel=async ()=>{
                 Név:
             </Text>
           <TextInput
-            placeholderTextColor="#dddddd"
+            placeholderTextColor="lightdark"
             style={{backgroundColor:'white', marginBottom:15, borderRadius:10, height:30}}
             placeholder="Add meg a neved:"
             onChangeText={(nev) => this.setState({nev})}
@@ -74,7 +74,7 @@ felvitel=async ()=>{
                 Komment:
             </Text>
           <TextInput
-            placeholderTextColor="#dddddd"
+            placeholderTextColor="lightdark"
             style={{backgroundColor:'white', marginBottom:15, borderRadius:10, height:30}}
             placeholder=" Add meg a kommentet:"
             onChangeText={(komment) => this.setState({komment})}
@@ -104,7 +104,8 @@ const styles = StyleSheet.create({
     },
     gomb:{
             height:45,
-            backgroundColor:'blue',
+            backgroundColor:'black',
+            
             width:'45%',
             alignSelf:'center',
             borderRadius:10

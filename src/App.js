@@ -26,6 +26,7 @@ import Adatfelv from "./sajatosztalyok/Adatfelv";
 import Kommentor from "./sajatosztalyok/Kommentor";
 
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -63,21 +64,21 @@ class App extends Component {
       <div>
         
         
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="#home">
+        <Navbar collapseOnSelect style={{backgroundColor:"#00FF00"}} >
+      <Navbar.Brand href="home">
         
-        Dice Roller
+        Főoldal
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="Kviz">Kviz</Nav.Link>
+          <Nav.Link  href="Kviz">Kvíz</Nav.Link>
           <Nav.Link href="Kommentek">Komment írás</Nav.Link>
 
           {showAdminBoard&&(
           <NavDropdown title="Admin" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="Torol">Törlés</NavDropdown.Item>
-            <NavDropdown.Item href="Adatfelv">  Adat felvitel </NavDropdown.Item>
+            <NavDropdown.Item href="Torol">Kérdés törlés</NavDropdown.Item>
+            <NavDropdown.Item href="Adatfelv">  Kérdés frissítés </NavDropdown.Item>
             <NavDropdown.Item href="Kommentor">  Komment törlés </NavDropdown.Item>
           </NavDropdown>
           )}
@@ -131,6 +132,7 @@ class App extends Component {
             <Route path="/Kommentek" component={Kommentek} />
             <Route path="/Adatfelv" component={Adatfelv} />
             <Route path="/Kommentor" component={Kommentor} />
+            
           </Switch>
         </div>
       </div>

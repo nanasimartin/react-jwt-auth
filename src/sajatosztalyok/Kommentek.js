@@ -70,7 +70,7 @@ export default class Komment extends Component {
 
         <Felvitel tema_bevitel={this.state.tema}  frissit={()=>this.ujratoltes()}  />
 
-<View style={{backgroundColor:'lightgreen',borderTopColor:'black', marginTop:12}}>
+<View style={{backgroundColor:'#00FF00',borderTopColor:'black', marginTop:12}}>
         <Text style={{fontSize:30, textAlign:'center', marginTop:25}}>Megjegyzések</Text>
         <FlatList
           data={this.state.dataSource}
